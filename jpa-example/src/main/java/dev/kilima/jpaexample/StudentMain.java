@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import dev.kilima.jpaexample.beans.StudentBean;
+import dev.kilima.jpaexample.beans.Student;
 
 public class StudentMain {
 
@@ -22,7 +22,7 @@ public class StudentMain {
 		 */
 
 		// Update Operation
-		StudentBean std = manager.find(StudentBean.class, 2);
+		Student std = manager.find(Student.class, 2);
 
 		std.setStdname("Updated Name");
 		std.setTotal(6700);
