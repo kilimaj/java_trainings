@@ -15,8 +15,9 @@ public class StudentMain {
 		EntityTransaction tran = manager.getTransaction();
 
 		StudentBean student = new StudentBean();
-		student.setStdname("Mabula King");
-		student.setTotal(800);
+		student.setStdname("Bundala King");
+		student.setTotal(1000);
+		student.setDob("2024-02-01");
 		tran.begin();
 		manager.persist(student);
 		tran.commit();

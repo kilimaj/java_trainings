@@ -18,6 +18,16 @@ public class StudentBean {
 	private String stdname;
 	@Column
 	private int total;
+	@Column(columnDefinition = "date")
+	private String dob;
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
 
 	public int getRegno() {
 		return regno;
