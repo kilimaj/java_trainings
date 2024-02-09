@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class OneToOneMain {
+public class One2OneUpdate {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,23 +15,15 @@ public class OneToOneMain {
 		EntityManager manager = factory.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 
-		Person person = new Person();
-		person.setPersonName("Mabula");
-
+		Person person = manager.find(Person.class, 3);
 		Passport passport = new Passport();
-		passport.setPassportNo("tttt12345");
+		passport.setPassportNo("XYZK567890");
 		passport.setDateIssued(new Date());
 		passport.setPerson(person);
 
 		tran.begin();
-		//insert to both person and passport table
-		//manager.persist(passport);
-		
-		//insert into only person 
-		manager.persist(person);
-		
+		manager.persist(passport);
 		tran.commit();
-		manager.close();
 
 	}
 
