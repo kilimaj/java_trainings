@@ -29,7 +29,8 @@ public class StudentMain {
 		std.setDob("2023-10-09");
 
 		tran.begin();
-		manager.persist(std);
+		// manager.persist(std);
+		manager.remove(std);
 		tran.commit();
 		manager.close();
 
