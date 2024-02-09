@@ -14,14 +14,26 @@ public class StudentMain {
 		EntityManager manager = factory.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 
-		StudentBean student = new StudentBean();
-		student.setStdname("Bundala King");
-		student.setTotal(1000);
-		student.setDob("2024-02-01");
+		/*
+		 * // Insert operation StudentBean student = new StudentBean();
+		 * student.setStdname("Bundala King"); student.setTotal(1000);
+		 * student.setDob("2024-02-01"); tran.begin(); manager.persist(student);
+		 * tran.commit(); manager.close();
+		 */
+
+		// Update Operation
+		StudentBean std = manager.find(StudentBean.class, 2);
+
+		std.setStdname("Updated Name");
+		std.setTotal(6700);
+		std.setDob("2023-10-09");
+
 		tran.begin();
-		manager.persist(student);
+		manager.persist(std);
 		tran.commit();
 		manager.close();
+
+		//
 
 	}
 
