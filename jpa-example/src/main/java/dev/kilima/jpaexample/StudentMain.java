@@ -30,6 +30,7 @@ public class StudentMain {
 
 		tran.begin();
 		// manager.persist(std);
+		//Delete operation
 		manager.remove(std);
 		tran.commit();
 		manager.close();
