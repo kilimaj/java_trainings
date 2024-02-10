@@ -26,4 +26,5 @@ public class BookController {
 		String mesg = "book inserted on " + new Date();
 		return new ResponseEntity<String>(mesg, HttpStatus.OK);
 	}
+	
 }
