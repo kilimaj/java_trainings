@@ -19,7 +19,7 @@ public class Passport {
 	@Column
 	private Date dateIssued;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "personId", unique = true)
+	@JoinColumn(name = "personId", unique = true, nullable = false)
 	private Person person;
 
 	public String getPassportNo() {
