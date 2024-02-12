@@ -2,6 +2,7 @@ package dev.kilima.mybatis;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,9 +11,10 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import dev.kilima.mybatis.entities.Student;
 
-public class AddStudentWithRowMapper {
+public class GetDataWithMapper {
 
 	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
 		Reader reader = Resources.getResourceAsReader("SqlMapConfig.xml");
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);
 		SqlSession session = factory.openSession();
@@ -20,25 +22,9 @@ public class AddStudentWithRowMapper {
 		session.getConfiguration().addMapper(StudentRowMapper.class);
 		StudentRowMapper mapper = session.getMapper(StudentRowMapper.class);
 
-		/*
-		 * Student std = new Student(); std.setStdname("mapper-1"); std.setTotal(123);
-		 * std.setDob("1994-12-12"); mapper.addStudent(std); session.commit();
-		 * session.close(); System.out.println("inserted");
-		 */
-		
-		//Updating 
-		//Student std = new Student();
-		//std.setRegno(3);
-		//std.setStdname("updated-1");
-		//std.setTotal(123);
-		//std.setDob("1994-12-12");
-		//mapper.addStudent(std);
-		mapper.deleteStudent(3);
-		System.out.println("deleted");
-		session.commit();
-		session.close();
-		//System.out.println("inserted");
-
+		List<Student> stdlist = mapper.getAllStudent();
+		stdlist.forEach(
+				(s) -> System.out.println(s.getRegno() + " " + s.getStdname() + " " + s.getDob() + " " + s.getTotal()));
 	}
 
 }
