@@ -4,7 +4,8 @@
 	
 <configuration>
 	<typeAliases>
-		<typeAlias type="dev.kilima.mybatis.entities.Student" alias="Student"/> 
+		<typeAlias type="dev.kilima.mybatis.entities.Student" alias="Student"/>
+		<typeAlias type="dev.kilima.mybatis.entities.Employee" alias="Employee"/>  
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
