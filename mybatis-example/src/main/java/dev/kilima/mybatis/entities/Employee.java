@@ -7,14 +7,6 @@ public class Employee {
 	private Double salary;
 	private String doj;
 
-	public Employee(int empid, String empname, Double salary, String doj) {
-		super();
-		this.empid = empid;
-		this.empname = empname;
-		this.salary = salary;
-		this.doj = doj;
-	}
-
 	public int getEmpid() {
 		return empid;
 	}
