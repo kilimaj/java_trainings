@@ -18,13 +18,16 @@ public class Update_DelStudent {
 		SqlSession session = factory.openSession();
 
 		Student std = new Student();
-		std.setRegno(3);
-		std.setStdname("Gavin King");
-		std.setTotal(600);
-		std.setDob("2017-12-16");
-		session.update("Student.update", std);
+		// std.setRegno(3);
+		// std.setStdname("Gavin King");
+		// std.setTotal(600);
+		// std.setDob("2017-12-16");
+		// Updating
+		// session.update("Student.update", std);
+		// Deleting
+		session.delete("Student.delete", 1);
 		session.commit();
-		System.out.println("updated");
+		System.out.println("deleted");
 		session.close();
 
 	}

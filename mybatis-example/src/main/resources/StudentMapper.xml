@@ -12,7 +12,10 @@
 		update student set stdname =
 		#{stdname}, total = #{total}, dob = #{dob} where regno = ${regno};
 	</update>
-	
-	
+
+	<delete id="delete" parameterType="int">
+		delete from student where
+		regno = #{regno};
+	</delete>
 
 </mapper>
