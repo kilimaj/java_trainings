@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import dev.kilima.library.entity.Book;
+import dev.kilima.library.entity.BookCount;
 
 public interface BookService {
 
@@ -18,6 +19,8 @@ public interface BookService {
 	Optional<Book> findById(int bookId);
 
 	List<Book> findByTitle(String title);
-	
+
 	Optional<Book> getTitleAuthorById(int id);
+
+	List<BookCount> bookCountList(String title);
 }

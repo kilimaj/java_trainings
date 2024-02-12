@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.kilima.library.entity.Book;
+import dev.kilima.library.entity.BookCount;
 import dev.kilima.library.service.BookService;
 
 @RestController
@@ -67,5 +68,11 @@ public class BookController {
 	public ResponseEntity<Optional<Book>> getTitleAuthorById(@PathVariable int id) {
 		Optional<Book> book = service.getTitleAuthorById(id);
 		return new ResponseEntity<Optional<Book>>(book, HttpStatus.OK);
+	}
+	
+	@GetMapping("/bookcount/{title}")
+	public ResponseEntity<List<BookCount>> bookCount(@PathVariable String title) {
+		List<BookCount> countList = service.bookCountList(title);
+		return new ResponseEntity<List<BookCount>>(countList, HttpStatus.OK);
 	}
 }

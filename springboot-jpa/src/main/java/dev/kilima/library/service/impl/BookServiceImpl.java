@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import dev.kilima.library.dao.BookDao;
 import dev.kilima.library.entity.Book;
+import dev.kilima.library.entity.BookCount;
 import dev.kilima.library.service.BookService;
 
 @Service
@@ -52,6 +53,12 @@ public class BookServiceImpl implements BookService {
 	public Optional<Book> getTitleAuthorById(int id) {
 		// TODO Auto-generated method stub
 		return dao.getTitleAuthorById(id);
+	}
+
+	@Override
+	public List<BookCount> bookCountList(String title) {
+		// TODO Auto-generated method stub
+		return dao.bookCountList(title);
 	}
 
 }
