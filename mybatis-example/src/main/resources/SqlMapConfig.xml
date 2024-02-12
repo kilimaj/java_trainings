@@ -22,8 +22,8 @@
 		</environment>
 	</environments>
 
-	<mappers>
+	<!-- <mappers>
 		<mapper resource="StudentMapper.xml" />
 		<mapper resource="EmployeeMapper.xml" />
-	</mappers>
+	</mappers> -->
 </configuration>
