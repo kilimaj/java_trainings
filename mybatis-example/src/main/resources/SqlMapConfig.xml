@@ -4,7 +4,7 @@
 	
 <configuration>
 	<typeAliases>
-		<typeAlias type="std.Student" alias="Student"/> 
+		<typeAlias type="dev.kilima.mybatis.entities.Student" alias="Student"/> 
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
