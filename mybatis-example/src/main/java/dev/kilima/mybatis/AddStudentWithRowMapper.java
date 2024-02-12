@@ -20,14 +20,24 @@ public class AddStudentWithRowMapper {
 		session.getConfiguration().addMapper(StudentRowMapper.class);
 		StudentRowMapper mapper = session.getMapper(StudentRowMapper.class);
 
+		/*
+		 * Student std = new Student(); std.setStdname("mapper-1"); std.setTotal(123);
+		 * std.setDob("1994-12-12"); mapper.addStudent(std); session.commit();
+		 * session.close(); System.out.println("inserted");
+		 */
+		
+		//Updating 
 		Student std = new Student();
-		std.setStdname("mapper-1");
+		std.setRegno(3);
+		std.setStdname("updated-1");
 		std.setTotal(123);
-		std.setDob("1994-12-12");
-		mapper.addStudent(std);
+		//std.setDob("1994-12-12");
+		//mapper.addStudent(std);
+		int rows = mapper.updateStudent(std);
+		System.out.println(rows>0 ? "updated": "not-updated");
 		session.commit();
 		session.close();
-		System.out.println("inserted");
+		//System.out.println("inserted");
 
 	}
 
