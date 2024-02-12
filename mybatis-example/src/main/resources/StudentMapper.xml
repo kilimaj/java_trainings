@@ -18,4 +18,19 @@
 		regno = #{regno};
 	</delete>
 
+	<resultMap type="Student" id="stdResult"> <!-- map columns to data members -->
+		<id column="regno" property="regno" />
+		<result property="stdname" column="stdname" />
+		<result property="total" column="total" />
+		<result property="dob" column="dob" />
+	</resultMap>
+
+	<select id="getAll" resultMap="stdResult"> <!-- to get all records list -->
+		select * from student;
+	</select>
+
+	<select id="getStudentByRegno" resultMap="stdResult"> <!-- to get particular record -->
+		select * from student where regno = #{regno};
+	</select>
+
 </mapper>
