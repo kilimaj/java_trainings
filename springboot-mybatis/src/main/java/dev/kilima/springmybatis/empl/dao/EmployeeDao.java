@@ -8,6 +8,6 @@ import dev.kilima.springmybatis.empl.beans.Employee;
 @Mapper
 public interface EmployeeDao {
 
-	@Insert("insert into employee values (#{empid},#{empname}, #{salary}, #{doj}")
+	@Insert("insert into employee values (#{empid},#{empname}, #{salary}, #{doj})")
 	int addEmployee(Employee emp);
 }
