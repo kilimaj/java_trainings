@@ -25,6 +25,13 @@ public class GetDataWithMapper {
 		List<Student> stdlist = mapper.getAllStudent();
 		stdlist.forEach(
 				(s) -> System.out.println(s.getRegno() + " " + s.getStdname() + " " + s.getDob() + " " + s.getTotal()));
+
+		System.out.println("----------------------------------------------------------");
+
+		Student std = mapper.getStudentById(4);
+		System.out.println(std.getRegno() + " " + std.getStdname() + " " + std.getDob() + " " + std.getTotal());
+
+		session.close();
 	}
 
 }

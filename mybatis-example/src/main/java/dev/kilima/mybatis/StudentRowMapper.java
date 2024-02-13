@@ -35,6 +35,7 @@ public interface StudentRowMapper {
 			@Result(column = "total", property = "total"),
 			@Result(column = "dob", property = "dob")	
 	})
+	Student getStudentById(int regno);
 
 	@Insert(insert)
 	void addStudent(Student std);
