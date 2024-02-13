@@ -6,6 +6,25 @@ public class Employee {
 	private String empname;
 	private double salary;
 	private String doj;
+	private double ctc;
+	private double netpay;
+	
+
+	public double getCtc() {
+		return ctc;
+	}
+
+	public void setCtc(double ctc) {
+		this.ctc = ctc;
+	}
+
+	public double getNetpay() {
+		return netpay;
+	}
+
+	public void setNetpay(double netpay) {
+		this.netpay = netpay;
+	}
 
 	public int getEmpid() {
 		return empid;

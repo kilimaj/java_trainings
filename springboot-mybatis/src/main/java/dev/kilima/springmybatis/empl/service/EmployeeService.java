@@ -15,4 +15,6 @@ public interface EmployeeService {
 	List<Employee> getAllEmployee();
 	
 	Employee getById(int empid);
+	
+	void calculateNetPay(Employee emp);
 }

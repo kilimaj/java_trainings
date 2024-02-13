@@ -13,10 +13,10 @@ import dev.kilima.springmybatis.empl.beans.Employee;
 @Mapper
 public interface EmployeeDao {
 
-	@Insert("insert into employee values (#{empid},#{empname}, #{salary}, #{doj})")
+	@Insert("insert into employee values (#{empid},#{empname}, #{salary}, #{doj}, #{ctc}, #{netpay})")
 	int addEmployee(Employee emp);
 
-	@Update("update employee set empname=#{empname}, salary=#{salary}, doj=#{doj} where empid=#{empid}")
+	@Update("update employee set empname=#{empname}, salary=#{salary}, doj=#{doj}, #{ctc}, #{netpay} where empid=#{empid}")
 	int updateEmployee(Employee emp);
 
 	@Delete("delete from employee where empid=#{empid}")
